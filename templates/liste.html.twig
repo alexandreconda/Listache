@@ -1,0 +1,25 @@
+{# templates/main.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<h1>Liste des tâches</h1>
+
+<ul class="listeTaches">
+{% for tache in liste_taches %}
+    <li class="tache">
+    	<table>
+    		<tr><td colspan="2"><h2>{{tache.nom}}</h2></td></tr>
+    		<tr>
+    			<td class="left-panel"> <img class="middle" src="{{ asset('build/images/user.svg') }}"/> {{tache.groupe}}</td>
+    			<td class="right-panel"><ul>
+    				<li><b>{{tache.importance}}</b></li>
+    				<li>{{tache.etat}}</li>
+    				<li>{{tache.echeance}}</li>
+    			</ul></td></tr>
+    	</table>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
